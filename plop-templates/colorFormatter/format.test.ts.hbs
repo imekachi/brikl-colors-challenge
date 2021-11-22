@@ -1,0 +1,8 @@
+import { formatTo{{pascalCase format}} } from '@/backend/service/formatters/{{camelCase format}}'
+
+describe('formatTo{{pascalCase format}}', () => {
+  it('should return the correct format', () => {
+    const colorObj = { r: 50, g: 60, b: 70 }
+    expect(formatTo{{pascalCase format}}(colorObj)).toEqual('50, 60, 70')
+  })
+})

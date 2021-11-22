@@ -1,0 +1,10 @@
+import { ColorObj } from '@/backend/service/colorGenerator'
+
+export type Formatted{{pascalCase format}} = `${number}, ${number}, ${number}`
+
+/**
+ * Formats color object as {{pascalCase format}} string.
+ */
+export function formatTo{{pascalCase format}}({ r, g, b }: ColorObj): Formatted{{pascalCase format}} {
+  return `${r}, ${g}, ${b}`
+}
