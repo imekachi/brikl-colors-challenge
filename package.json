@@ -1,0 +1,65 @@
+{
+  "name": "brikl-colors-challenge",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "test": "jest --config jest.config.js",
+    "test:staged-files": "yarn test --bail --findRelatedTests --passWithNoTests",
+    "coverage": "yarn test --coverage --ci --silent",
+    "build": "next build",
+    "start": "next start",
+    "build:static": "next build && next export",
+    "type-check": "tsc --project tsconfig.json --noEmit",
+    "lint": "next lint",
+    "lint:manual": "eslint --ext js,jsx,ts,tsx --fix",
+    "prepare": "husky install",
+    "generate": "plop"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "yarn test:staged-files"
+    ]
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.4.2",
+    "@heroicons/react": "^1.0.5",
+    "apollo-server-micro": "^3.5.0",
+    "clsx": "^1.1.1",
+    "graphql": "^16.0.1",
+    "micro-cors": "^0.1.1",
+    "next": "12.0.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "tailwindcss": "^2.2.19"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/react-hooks": "^7.0.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.6",
+    "@types/react": "^17.0.34",
+    "@typescript-eslint/eslint-plugin": "^5.3.0",
+    "@typescript-eslint/parser": "^5.3.0",
+    "babel-jest": "^27.3.1",
+    "eslint": "<8.0.0",
+    "eslint-config-next": "^12.0.2",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-unused-imports": "^1.1.5",
+    "husky": "^7.0.4",
+    "jest": "^27.3.1",
+    "lint-staged": "^11.2.6",
+    "plop": "^2.7.6",
+    "postcss": "^8.3.11",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-nested": "^5.0.6",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.4.1",
+    "typescript": "^4.4.4"
+  }
+}
