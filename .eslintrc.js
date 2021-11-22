@@ -30,10 +30,6 @@ module.exports = {
     'unused-imports/no-unused-imports': 'error',
     'import/no-duplicates': 'warn',
     'import/no-useless-path-segments': 'warn',
-    // Remove unused imports
-    'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': 'off',
-    'unused-imports/no-unused-imports': 'error',
     // Others
     'no-param-reassign': 'error',
     '@typescript-eslint/no-shadow': 'error'
