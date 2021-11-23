@@ -20,11 +20,11 @@ export const colorFormatterEntries = Object.entries(colorFormatters) as [
 
 export type FormattedColor = {
   format: ColorFormats
-  color: string
+  value: string
 }
 
 // TODO: add unit tests
 export function randomFormatColor(color: ColorObj): FormattedColor {
   const [format, formatter] = randomPick(colorFormatterEntries)
-  return { format, color: formatter(color) }
+  return { format, value: formatter(color) }
 }

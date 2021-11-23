@@ -8,10 +8,10 @@ export const typeDefs = gql`
 
   type Color {
     format: ColorTypes!
-    color: String!
+    value: String!
   }
 
   type Query {
-    generateSwatch: [Color]!
+    generateSwatch: [Color!]!
   }
 `
