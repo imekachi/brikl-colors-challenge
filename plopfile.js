@@ -48,7 +48,7 @@ const questions = {
   path: {
     type: 'input',
     name: 'path',
-    message: 'Where should it be generated? (/src/{{YOUR_PATH}})',
+    message: 'Where should it be generated? (/src/frontend/{{path}})',
     default: 'components',
   },
 };
