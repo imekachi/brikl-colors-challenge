@@ -1,3 +1,4 @@
+import HslFormatter from '@/service/color/formatters/hsl'
 import { randomPick } from '@/utils/random'
 import { ColorFormatter } from './formatter.types'
 import HexFormatter from './formatters/hex'
@@ -8,6 +9,7 @@ import { ColorData } from './types'
 export const colorFormatterMap = {
   RGB: RgbFormatter,
   HEX: HexFormatter,
+  HSL: HslFormatter,
   // add new format here
 } as const
 
