@@ -1,3 +1,4 @@
+import BrgbFormatter from '@/service/color/formatters/brgb'
 import HslFormatter from '@/service/color/formatters/hsl'
 import { randomPick } from '@/utils/random'
 import { ColorFormatter } from './formatter.types'
@@ -10,6 +11,7 @@ export const colorFormatterMap = {
   RGB: RgbFormatter,
   HEX: HexFormatter,
   HSL: HslFormatter,
+  BRGB: BrgbFormatter,
   // add new format here
 } as const
 
