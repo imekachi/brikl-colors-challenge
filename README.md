@@ -30,9 +30,10 @@ $ yarn build:static
 ```
 The output will be in `out` folder.
 
-### Generate a page
+### Generate a colorFormatter
 ```bash
-$ yarn generate page <pagePath> <PageComponentName>
+# the name should be in lowercase
+$ yarn generate colorFormatter <name>
 ```
 
 ### Generate a component
@@ -40,13 +41,31 @@ $ yarn generate page <pagePath> <PageComponentName>
 $ yarn generate component <ComponentName> [<path>]
 ```
 
-### Generate a component css file
+### Generate a component css module file
 ```bash
 $ yarn generate style <ComponentName> [<path>]
 ```
 
-### Generate a provider
-```bash
-$ yarn generate provider <ProviderName> [<path>]
-```
-
+# How to add a new color format to the API?
+1. run the generate command for the new colorFormatter
+    ```bash
+    $ yarn generate colorFormatter <name> 
+    ```
+    For example, if you want to add a new SWAG color format, you would type
+    ```bash
+    $ yarn generate colorFormatter swag
+    ```
+2. you should see `<name>.ts` and `<name>.test.ts` files in `src/service/color/formatters/` directory
+3. write your test in the `<name>.test.ts` file and implement your format logic in the `<name>.ts` file
+4. register your formatter to the `colorFormatterMap` variable in `src/service/color/formatter.ts`
+    For example, the new SWAG formatter should be added like this
+    ```ts
+    // Register formatters
+    export const colorFormatterMap = {
+      RGB: RgbFormatter,
+      // ...
+      SWAG: SwagFormatter,
+      // add new format here
+    } as const
+    ```
+5. Done!

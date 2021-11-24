@@ -1,8 +1,20 @@
 import { ColorFormatter } from '@/service/color/formatter.types'
 
 const {{pascalCase format}}Formatter: ColorFormatter = {
-  format: (color) => {},
-  toColorData: (formatted) => {},
+  format: (color) => {
+    // write how to convert the color data to your desire format
+    return 'your-desire-format'
+  },
+  toColorData: (formatted) => {
+    // write how to convert the string in your desire format to color data
+
+    // you should should throw an error the case when the formatted string is not valid
+    if (formatted === 'invalid-format') {
+      throw new Error('Invalid {{upperCase format}} string')
+    }
+
+    return { r: 0, g: 0, b: 0 }
+  },
 }
 
 export default {{pascalCase format}}Formatter
