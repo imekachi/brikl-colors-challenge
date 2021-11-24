@@ -12,6 +12,7 @@ module.exports = {
     'jsx-a11y/anchor-is-valid': 'off',
     '@next/next/no-img-element': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'warn',
+    'import/no-cycle': 'error',
     quotes: ['error', 'single', { avoidEscape: true }],
     // Sort imports
     'import/order': [
