@@ -1,11 +1,8 @@
 import { ApolloError } from '@apollo/client'
 import { render, screen } from '@testing-library/react'
 import React from 'react'
-import {
-  GenerateSwatch,
-  GenerateSwatch_generateSwatch,
-} from '@/frontend/types/graphql/GenerateSwatch'
-import { ColorTypes } from '@/frontend/types/graphql/global'
+import { QueryGenerateSwatch } from '@/frontend/hooks/query/useQueryGenerateSwatch'
+import { FormattedColor } from '@/service/color/formatter'
 import RandomSwatch from './RandomSwatch'
 
 describe('RandomSwatch', () => {
@@ -31,14 +28,15 @@ describe('RandomSwatch', () => {
   })
 
   it('should render the swatch when the data is present', () => {
-    const mockColor: GenerateSwatch_generateSwatch = {
-      __typename: 'Color',
-      format: ColorTypes.HEX,
+    const mockColor: FormattedColor = {
+      format: 'HEX',
       value: '#f37a01',
     }
-    const mockData: GenerateSwatch = {
+
+    const mockData: QueryGenerateSwatch = {
       generateSwatch: Array(5).fill(mockColor),
     }
+
     render(<RandomSwatch isLoading={false} data={mockData} />)
     expect(screen.queryByTestId('SwatchGrid')).toBeInTheDocument()
   })

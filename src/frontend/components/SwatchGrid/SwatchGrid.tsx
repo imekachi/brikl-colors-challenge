@@ -1,16 +1,17 @@
 import ColorBox, { ColorBoxPlaceholder } from '@/frontend/components/ColorBox'
-import { GenerateSwatch_generateSwatch } from '@/frontend/types/graphql/GenerateSwatch'
+import { toCssColor } from '@/frontend/lib/toCssColor'
+import { FormattedColor } from '@/service/color/formatter'
 import style from './SwatchGrid.module.css'
 
 export type SwatchGridProps = {
-  swatch: GenerateSwatch_generateSwatch[]
+  swatch: FormattedColor[]
 }
 
 const SwatchGrid = ({ swatch }: SwatchGridProps): JSX.Element => {
   return (
     <div className={style.swatchGrid} data-testid="SwatchGrid">
       {swatch.map((color, index) => (
-        <ColorBox key={index} color={color.value} />
+        <ColorBox key={index} color={toCssColor(color)} />
       ))}
     </div>
   )

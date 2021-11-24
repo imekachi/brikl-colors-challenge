@@ -20,6 +20,7 @@ const ColorBox = ({
         )}
         style={{ backgroundColor: color }}
         data-testid={testId}
+        aria-label={color}
       >
         <span className="sr-only">{color}</span>
       </div>

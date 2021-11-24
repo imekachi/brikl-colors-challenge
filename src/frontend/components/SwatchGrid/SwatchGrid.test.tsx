@@ -1,13 +1,12 @@
 import { render, screen } from '@testing-library/react'
 import React from 'react'
-import { GenerateSwatch_generateSwatch } from '@/frontend/types/graphql/GenerateSwatch'
-import { ColorTypes } from '@/frontend/types/graphql/global'
+import { toCssColor } from '@/frontend/lib/toCssColor'
+import { FormattedColor } from '@/service/color/formatter'
 import SwatchGrid, { SwatchGridProps } from './SwatchGrid'
 
 describe('SwatchGrid', () => {
-  const mockColor: GenerateSwatch_generateSwatch = {
-    __typename: 'Color',
-    format: ColorTypes.HEX,
+  const mockColor: FormattedColor = {
+    format: 'HEX',
     value: '#f37a01',
   }
 
@@ -19,6 +18,13 @@ describe('SwatchGrid', () => {
     render(<SwatchGrid {...mockedProps} />)
     expect(screen.queryAllByTestId('ColorBox')).toHaveLength(
       mockedProps.swatch.length
+    )
+  })
+
+  it('should render the correct color', () => {
+    render(<SwatchGrid {...mockedProps} />)
+    expect(screen.queryAllByTestId('ColorBox')[0]).toHaveStyle(
+      `background-color: ${toCssColor(mockColor)}`
     )
   })
 })

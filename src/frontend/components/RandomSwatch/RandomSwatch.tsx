@@ -3,12 +3,12 @@ import MessageBox from '@/frontend/components/MessageBox'
 import SwatchGrid, {
   SwatchGridPlaceHolder,
 } from '@/frontend/components/SwatchGrid'
-import { GenerateSwatch } from '@/frontend/types/graphql/GenerateSwatch'
+import { QueryGenerateSwatch } from '@/frontend/hooks/query/useQueryGenerateSwatch'
 
 export type RandomSwatchProps = {
   isLoading: boolean
   error?: ApolloError
-  data?: GenerateSwatch
+  data?: QueryGenerateSwatch
 }
 
 const RandomSwatch = ({
