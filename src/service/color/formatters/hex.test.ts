@@ -8,6 +8,7 @@ describe('HexFormatter', () => {
 
   it('should return the correct format', () => {
     expect(HexFormatter.format(mockColor.data)).toEqual(mockColor.formatted)
+    expect(HexFormatter.format({ r: 0, b: 0, g: 0 })).toEqual('#000000')
   })
 
   it('should return the correct data when converting back to color data', () => {

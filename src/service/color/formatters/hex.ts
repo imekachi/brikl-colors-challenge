@@ -1,8 +1,11 @@
 import { ColorFormatter } from '@/service/color/formatter.types'
+import { strPad } from '@/utils/string'
 
 const HexFormatter: ColorFormatter = {
-  format: ({ r, g, b }) =>
-    `#${numberToHex(r)}${numberToHex(g)}${numberToHex(b)}`,
+  format: ({ r, g, b }) => {
+    const hexArr = [r, g, b].map((value) => strPad(numberToHex(value), 2, '0'))
+    return `#${hexArr.join('')}`
+  },
   toColorData: (formatted) => {
     // remove the leading # and group the remaining values
     const hexStrArr = formatted.slice(1).match(/[\da-fA-F]{2}/g)
