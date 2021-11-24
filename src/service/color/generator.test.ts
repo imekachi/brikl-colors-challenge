@@ -1,4 +1,4 @@
-import { generateRandomSwatch } from '@/backend/service/colorGenerator'
+import { generateRandomSwatch } from '@/service/color/generator'
 
 describe('generateRandomSwatch', () => {
   it('should return an array with the length of the correct size', () => {

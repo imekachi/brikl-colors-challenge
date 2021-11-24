@@ -1,15 +1,10 @@
-import { getRandomInt } from '@/backend/utils/random'
-
-export type ColorObj = {
-  r: number
-  g: number
-  b: number
-}
+import { ColorData } from '@/service/color/types'
+import { getRandomInt } from '@/utils/random'
 
 /**
  * Generates a random color as an object.
  */
-export function generateRandomColor(): ColorObj {
+export function generateRandomColor(): ColorData {
   return {
     r: getRandomInt(0, 255),
     g: getRandomInt(0, 255),
@@ -20,7 +15,7 @@ export function generateRandomColor(): ColorObj {
 /**
  * Generates a swatch with random colors.
  */
-export function generateRandomSwatch(size: number): ColorObj[] {
+export function generateRandomSwatch(size: number): ColorData[] {
   return Array(size)
     .fill(0)
     .map(() => generateRandomColor())

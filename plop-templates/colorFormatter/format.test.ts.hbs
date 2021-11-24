@@ -1,8 +1,23 @@
-import { formatTo{{pascalCase format}} } from '@/backend/service/formatters/{{camelCase format}}'
+import {{pascalCase format}}Formatter from './{{camelCase format}}'
 
-describe('formatTo{{pascalCase format}}', () => {
+describe('{{pascalCase format}}Formatter', () => {
+  const mockColor = {
+    data: { r: 50, g: 60, b: 70 },
+    formatted: 'your-formatted-color',
+  }
+
   it('should return the correct format', () => {
-    const colorObj = { r: 50, g: 60, b: 70 }
-    expect(formatTo{{pascalCase format}}(colorObj)).toEqual('50, 60, 70')
+    expect({{pascalCase format}}Formatter.format(mockColor.data)).toEqual(mockColor.formatted)
+  })
+
+  it('should return the correct data when converting back to color data', () => {
+    expect({{pascalCase format}}Formatter.toColorData(mockColor.formatted)).toEqual(
+      mockColor.data
+    )
+  })
+
+  it('should throw an error when converting an invalid formatted color', () => {
+    expect(() => {{pascalCase format}}Formatter.toColorData('123')).toThrow()
   })
 })
+

@@ -1,4 +1,4 @@
-import { getRandomInt, randomPick } from '@/backend/utils/random'
+import { getRandomInt, randomPick } from '@/utils/random'
 
 describe('getRandomInt', () => {
   // TODO: use jest.spy to test edge cases

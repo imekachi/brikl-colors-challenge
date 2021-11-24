@@ -1,9 +1,6 @@
 import { SWATCH_SIZE } from '@/backend/config/swatch'
-import {
-  FormattedColor,
-  randomFormatColor,
-} from '@/backend/service/colorFormatter'
-import { generateRandomSwatch } from '@/backend/service/colorGenerator'
+import { FormattedColor, randomFormatColor } from '@/service/color/formatter'
+import { generateRandomSwatch } from '@/service/color/generator'
 
 export const resolvers = {
   Query: {

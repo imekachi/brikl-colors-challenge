@@ -18,11 +18,6 @@ const generateComponentIndex = {
   path: 'src/frontend/{{path}}/{{pascalCase name}}/index.ts',
   templateFile: 'plop-templates/components/index.ts.hbs',
 };
-const generateProvider = {
-  type: 'add',
-  path: 'src/frontend/{{path}}/{{pascalCase name}}Provider.tsx',
-  templateFile: 'plop-templates/Provider.tsx.hbs',
-};
 const generatePage = {
   type: 'add',
   path: 'src/pages/{{path}}.tsx',
@@ -30,12 +25,12 @@ const generatePage = {
 };
 const generateColorFormatter = {
   type: 'add',
-  path: 'src/backend/service/formatters/{{camelCase format}}.ts',
+  path: 'src/service/color/formatters/{{camelCase format}}.ts',
   templateFile: 'plop-templates/colorFormatter/format.ts.hbs',
 }
 const generateColorFormatterTest = {
   type: 'add',
-  path: 'src/backend/service/formatters/{{camelCase format}}.test.ts',
+  path: 'src/service/color/formatters/{{camelCase format}}.test.ts',
   templateFile: 'plop-templates/colorFormatter/format.test.ts.hbs',
 }
 
@@ -63,18 +58,6 @@ module.exports = (plop) => {
     description: 'Create a component style',
     prompts: [questions.componentName, questions.path],
     actions: [generateComponentStyle],
-  });
-  plop.setGenerator('provider', {
-    description: 'Create a context provider',
-    prompts: [
-      {
-        type: 'input',
-        name: 'name',
-        message: 'What is your provider name?',
-      },
-      { ...questions.path, default: 'providers' },
-    ],
-    actions: [generateProvider],
   });
   plop.setGenerator('page', {
     description: 'Create a page',

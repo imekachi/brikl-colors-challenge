@@ -1,9 +1,23 @@
-import { formatToHex, numberToHex } from '@/backend/service/formatters/hex'
+import HexFormatter, { numberToHex } from './hex'
 
-describe('formatToHex', () => {
+describe('HexFormatter', () => {
+  const mockColor = {
+    data: { r: 50, g: 60, b: 70 },
+    formatted: '#323c46',
+  }
+
   it('should return the correct format', () => {
-    const colorObj = { r: 50, g: 60, b: 70 }
-    expect(formatToHex(colorObj)).toEqual('#323c46')
+    expect(HexFormatter.format(mockColor.data)).toEqual(mockColor.formatted)
+  })
+
+  it('should return the correct data when converting back to color data', () => {
+    expect(HexFormatter.toColorData(mockColor.formatted)).toEqual(
+      mockColor.data
+    )
+  })
+
+  it('should throw an error when converting an invalid formatted color', () => {
+    expect(() => HexFormatter.toColorData('123')).toThrow()
   })
 })
 
