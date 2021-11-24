@@ -7,8 +7,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: twColors.blue,
-        secondary: twColors.blueGray,
+        primary: {
+          default: '#8b2950',
+          light: '#b23566',
+        },
         gray: twColors.trueGray,
       }
     },

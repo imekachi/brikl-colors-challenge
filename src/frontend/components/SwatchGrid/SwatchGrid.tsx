@@ -9,11 +9,15 @@ export type SwatchGridProps = {
 
 const SwatchGrid = ({ swatch }: SwatchGridProps): JSX.Element => {
   return (
-    <div className={style.swatchGrid} data-testid="SwatchGrid">
+    <section className={style.swatchGrid} data-testid="SwatchGrid">
       {swatch.map((color, index) => (
-        <ColorBox key={index} color={toCssColor(color)} />
+        <ColorBox
+          key={index}
+          color={toCssColor(color)}
+          formattedColor={color}
+        />
       ))}
-    </div>
+    </section>
   )
 }
 
@@ -24,13 +28,13 @@ export const SwatchGridPlaceHolder = ({
   items = 5,
 }: SwatchGridPlaceholderProps): JSX.Element => {
   return (
-    <div className={style.swatchGrid} aria-label="loading">
+    <section className={style.swatchGrid} aria-label="loading">
       {Array(items)
         .fill(0)
         .map((item, index) => (
           <ColorBoxPlaceholder key={index} />
         ))}
-    </div>
+    </section>
   )
 }
 

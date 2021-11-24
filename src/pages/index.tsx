@@ -8,9 +8,11 @@ const RandomSwatchPage: NextPageWithLayout = () => {
   const { loading, error, data, refetch } = useQueryGenerateSwatch()
 
   return (
-    <main className="p-4 w-full">
-      <h1 className="text-4xl font-bold mb-6 text-center">Swatch Generator</h1>
-      <div className="my-16">
+    <main className="px-4 py-10 w-full max-w-7xl mx-auto md:px-10">
+      <h1 className="text-4xl font-bold mb-6 text-center md:text-6xl">
+        Swatch Generator
+      </h1>
+      <div className="mt-12 mb-10 md:mt-16 md:mb-16">
         <RandomSwatch isLoading={loading} error={error} data={data} />
       </div>
       <div className="text-center">

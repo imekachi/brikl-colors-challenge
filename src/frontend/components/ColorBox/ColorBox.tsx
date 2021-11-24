@@ -1,13 +1,16 @@
 import clsx from 'clsx'
+import { FormattedColor } from '@/service/color/formatter'
 
 export type ColorBoxProps = {
   color: string
+  formattedColor?: FormattedColor
   className?: string
   'data-testid'?: string
 }
 
 const ColorBox = ({
   color,
+  formattedColor,
   className,
   'data-testid': testId = 'ColorBox',
 }: ColorBoxProps): JSX.Element => {
@@ -22,7 +25,12 @@ const ColorBox = ({
         data-testid={testId}
         aria-label={color}
       >
-        <span className="sr-only">{color}</span>
+        {!!formattedColor && (
+          <div className="text-center text-white text-shadow">
+            <div className="font-bold">{formattedColor.format}</div>
+            <div>{formattedColor.value}</div>
+          </div>
+        )}
       </div>
     </div>
   )

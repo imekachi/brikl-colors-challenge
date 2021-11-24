@@ -6,7 +6,7 @@
   }
 
   &:global(.-primary) {
-    @apply text-white bg-primary-600 hover:bg-primary-700;
+    @apply text-white bg-primary-default hover:bg-primary-light;
   }
   
   &:disabled {
