@@ -18,11 +18,6 @@ const generateComponentIndex = {
   path: 'src/frontend/{{path}}/{{pascalCase name}}/index.ts',
   templateFile: 'plop-templates/components/index.ts.hbs',
 };
-const generatePage = {
-  type: 'add',
-  path: 'src/pages/{{path}}.tsx',
-  templateFile: 'plop-templates/Page.tsx.hbs',
-};
 const generateColorFormatter = {
   type: 'add',
   path: 'src/service/color/formatters/{{camelCase format}}.ts',
@@ -58,19 +53,6 @@ module.exports = (plop) => {
     description: 'Create a component style',
     prompts: [questions.componentName, questions.path],
     actions: [generateComponentStyle],
-  });
-  plop.setGenerator('page', {
-    description: 'Create a page',
-    prompts: [
-      {
-        type: 'input',
-        name: 'path',
-        message:
-          'If you want the url "/users/:userId", input "users/[userId]" (without quotes)\nWhat is the path?',
-      },
-      questions.componentName,
-    ],
-    actions: [generatePage],
   });
   plop.setGenerator('colorFormatter', {
     description: 'Create color formatter',
