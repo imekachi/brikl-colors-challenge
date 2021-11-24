@@ -13,7 +13,6 @@
     "type-check": "tsc --project tsconfig.json --noEmit",
     "lint": "next lint",
     "lint:manual": "eslint --ext js,jsx,ts,tsx --fix",
-    "graphql:gen-types": "rm -rf ./src/frontend/types/graphql && apollo client:codegen --outputFlat --target=typescript --passthroughCustomScalars --customScalarsPrefix=GraphQL_ --globalTypesFile=src/frontend/types/graphql/global.ts src/frontend/types/graphql",
     "prepare": "husky install",
     "generate": "plop"
   },
@@ -50,7 +49,6 @@
     "@types/react": "^17.0.34",
     "@typescript-eslint/eslint-plugin": "^5.3.0",
     "@typescript-eslint/parser": "^5.3.0",
-    "apollo": "^2.33.9",
     "babel-jest": "^27.3.1",
     "eslint": "<8.0.0",
     "eslint-config-next": "^12.0.2",
