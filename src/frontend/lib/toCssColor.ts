@@ -6,6 +6,14 @@ import RgbFormatter from '@/service/color/formatters/rgb'
  */
 export function toCssColor(formattedColor: FormattedColor): string {
   const Formatter = colorFormatterMap[formattedColor.format]
-  const colorData = Formatter.toColorData(formattedColor.value)
-  return RgbFormatter.format(colorData)
+  try {
+    const colorData = Formatter.toColorData(formattedColor.value)
+    return RgbFormatter.format(colorData)
+  } catch (err) {
+    console.error('> Cannot transform color to CSS string: ', {
+      formattedColor,
+      err,
+    })
+    return '#000000'
+  }
 }
