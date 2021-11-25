@@ -23,7 +23,7 @@ $ yarn build
 ```
 The output will be in `.next` folder.
 
-### Build for production (static can host like normal react project)
+### Build for production (static, can be deployed to a simple cloud storage)
 Run this command
 ```bash
 $ yarn build:static
