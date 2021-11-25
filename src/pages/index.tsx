@@ -8,7 +8,14 @@ const RandomSwatchPage: NextPageWithLayout = () => {
   const { loading, error, data, refetch } = useQueryGenerateSwatch()
 
   return (
-    <main className="px-4 py-10 w-full max-w-7xl mx-auto md:px-10">
+    <main className="px-4 py-8 w-full max-w-7xl mx-auto md:px-10">
+      <div className="h-16 text-center mb-8">
+        <img
+          className="h-full mx-auto"
+          src="/images/BrikLSquare.svg"
+          alt="BrikL logo"
+        />
+      </div>
       <h1 className="text-4xl font-bold mb-6 text-center md:text-6xl">
         Swatch Generator
       </h1>

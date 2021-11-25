@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes } from 'react'
 
-export type ButtonSize = 'md' | 'lg'
+export type ButtonSize = 'lg'
 
 export type ButtonColor = 'primary'
 
