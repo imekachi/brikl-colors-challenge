@@ -2,6 +2,8 @@
 
 ![BrikL swatch generator](https://raw.githubusercontent.com/imekachi/brikl-colors-challenge/main/screenshot.png)
 
+Visit the live demo here [https://brikl-colors-challenge.vercel.app/](https://brikl-colors-challenge.vercel.app/)
+
 ## Commands
 ### Install dependencies
 ```bash
