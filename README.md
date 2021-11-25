@@ -55,9 +55,13 @@ $ yarn generate style <ComponentName> [<path>]
     ```bash
     $ yarn generate colorFormatter swag
     ```
-2. you should see `<name>.ts` and `<name>.test.ts` files in `src/service/color/formatters/` directory
-3. write your test in the `<name>.test.ts` file and implement your format logic in the `<name>.ts` file
-4. register your formatter to the `colorFormatterMap` variable in `src/service/color/formatter.ts`
+
+1. you should see `swag.ts` and `swag.test.ts` files in `src/service/color/formatters/` directory
+
+1. write your test in the `swag.test.ts` file and implement your format logic in the `swag.ts` file
+
+1. register your formatter to the `colorFormatterMap` variable in `src/service/color/formatter.ts`
+
     For example, the new SWAG formatter should be added like this
     ```ts
     // Register formatters
@@ -68,4 +72,5 @@ $ yarn generate style <ComponentName> [<path>]
       // add new format here
     } as const
     ```
-5. Done!
+
+1. Done!
