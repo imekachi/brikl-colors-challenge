@@ -22,6 +22,7 @@ function App({ Component, pageProps }: AppPropsWithLayout): ReactNode {
       <Head>
         <link rel="shortcut icon" href="/images/BrikLSquare.svg" />
         <title>Swatch generator - BRIKL</title>
+        <meta name="description" content="BrikL Swatch Generator" />
       </Head>
       <ApolloProvider client={apolloClient}>
         {getLayout(<Component {...otherPageProps} />)}
