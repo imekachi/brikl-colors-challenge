@@ -6,7 +6,11 @@ import { resolvers } from '@/backend/graphql/resolvers'
 import { typeDefs } from '@/backend/graphql/typeDefs'
 
 const cors = Cors()
-const apolloServer = new ApolloServer({ typeDefs, resolvers })
+const apolloServer = new ApolloServer({
+  typeDefs,
+  resolvers,
+  introspection: process.env.NODE_ENV === 'development',
+})
 const startServer = apolloServer.start()
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
