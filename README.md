@@ -1,4 +1,6 @@
-# Brikl colors challenge by Saran Weerakun
+# BrikL colors challenge by Saran Weerakun
+
+![BrikL swatch generator](https://raw.githubusercontent.com/imekachi/brikl-colors-challenge/main/screenshot.png)
 
 ## Commands
 ### Install dependencies
